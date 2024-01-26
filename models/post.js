@@ -1,47 +1,23 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection'); 
-
-class Post extends Model {}
-
-Post.init(
-    {
-        // Define model attributes
-        id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true
+module.exports = (sequelize, DataTypes) => {
+    class Post extends sequelize.Sequelize.Model {}
+    Post.init({
+        firebaseUserId: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true
         },
         content: {
-        type: DataTypes.TEXT,
-        allowNull: false
-        },
-        imageUrl: {
             type: DataTypes.STRING,
-            allowNull: true, 
-        },
-        videoUrl: {
-            type: DataTypes.STRING,
-            allowNull: true, 
-        },
-
-        firebaseUserId: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: true
+            allowNull: false,
         },
         createdAt: {
-            type: DataTypes.DATE,
-            defaultValue: DataTypes.NOW,
-        },
-    },
-    {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true
+        }
+    }, {
         sequelize,
-        timestamps: true, 
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'post',
-    }
-);
-
-module.exports = Post;
+        modelName: 'Post'
+    });
+    return Post;
+};
