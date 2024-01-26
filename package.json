@@ -1,0 +1,50 @@
+{
+  "name": "pixelpals",
+  "version": "1.0.0",
+  "description": "Gaming social media hub",
+  "main": "server.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "nodemon server.js && npm run build-tail",
+    "build-tail": "npx tailwindcss build -i public/css/tailwind.css -o public/css/styles.css --watch flag"
+  },
+  "keywords": [
+    "social",
+    "media",
+    "app",
+    "gaming"
+  ],
+  "author": "Angelica Strong",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.4.16",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "connect-session-sequelize": "^7.1.7",
+    "cookie-parser": "^1.4.6",
+    "csurf": "^1.11.0",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.2",
+    "express-session": "^1.17.3",
+    "express-validator": "^7.0.1",
+    "firebase": "^10.6.0",
+    "firebase-admin": "^11.11.0",
+    "firebaseui": "^6.1.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.6.3",
+    "sequelize": "^6.35.1",
+    "serve": "^14.2.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.1",
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0",
+    "tailwindcss": "^3.3.5"
+  }
+}
